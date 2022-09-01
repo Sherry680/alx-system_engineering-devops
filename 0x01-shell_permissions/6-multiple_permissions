@@ -1,2 +1,2 @@
 #!/bin/bash
-chmod ug_x hello
+chmod 754 hello
