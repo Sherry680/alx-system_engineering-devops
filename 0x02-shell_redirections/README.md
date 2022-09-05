@@ -1,1 +1,1 @@
-Write a script
+Display a confused smiley
