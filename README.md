@@ -1,1 +1,1 @@
-Write a script
+Shell variable expansion
