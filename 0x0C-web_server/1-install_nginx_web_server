@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# Install nginx server
 blue='\e[1;34m'
 brown='\e[0;33m'
 green='\e[1;32m'
