@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Run Whoami under argv[1] user
+
+su "$1" -s /bin/bash -c  'whoami'
+
