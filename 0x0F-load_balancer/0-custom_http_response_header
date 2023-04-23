@@ -3,6 +3,8 @@
 # Installs Nginx with the following configurations.
 # Listens on port 80.
 
+sudo apt-get -y update
+sudo apt-get -y install nginx
 mkdir -p /var/www/html
 touch /var/www/html/index.html
 echo "Hello World" > /var/www/html/index.html
