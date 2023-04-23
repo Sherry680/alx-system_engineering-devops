@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# Installs HAProxy version 2.6(LTS) with the following configurations:
+# Distributes requests using a round-robin algorithm.
+
+sudo apt-get -y update
+sudo apt-get -y upgrade
+sudo apt-get -y install haproxy
+sudo sed -i 's/ENABLED=0/ENABLED=1/' /etc/default/haproxy
+sudo cp /etc/haproxy/haproxy.cfg /etc/haproxy/haproxy.cfg.original
+sudo sed -i "$ a\listen 133866-web-01\n\tbind *:80\n\tmode http\n\tbalance roundrobin\n\toption httpclose\n\toption forwardfor\n\tserver 133866-web-02 34.205.65.98 check\n\tserver 133866-web-01 34.207.155.208 check" /etc/haproxy/haproxy.cfg
+# sudo service haproxy start
+sudo /etc/init.d/haproxy  start
