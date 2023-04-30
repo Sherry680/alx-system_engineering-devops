@@ -1,1 +1,1 @@
-Connect mysql to server web-1 and web-2
+Connect mysql to server web-1 and web-2.
