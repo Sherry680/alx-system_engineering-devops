@@ -1,1 +1,1 @@
-connect my sql to server
+connect mysql to server web 1 and web 2
