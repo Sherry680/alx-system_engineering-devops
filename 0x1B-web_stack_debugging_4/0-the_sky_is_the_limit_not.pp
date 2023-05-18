@@ -1,7 +1,13 @@
-# sky is the limit, let's bring that limit higher
+# This manuscript increases the amount of traffic an Nginx server can handle
 
-exec { 'increase the limit'
-  command => '/usr/bin/env sed -i s/15/6000/ /etc/default/nginx'
+# Increase the ULIMIT of the default file
+exec { 'fix--for-nginx':
+  command => 'sed -i "s/15/4096/" /etc/default/nginx',
+  path    => '/usr/local/bin/:/bin/'
 }
--> exec { '/usr/bin/env service nginx restart':
+
+# Restart Nginx
+-> exec { 'nginx-restart':
+  command => 'nginx restart',
+  path    => '/etc/init.d/'
 }
